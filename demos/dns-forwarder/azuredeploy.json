@@ -77,18 +77,18 @@
   "variables": {
     "ubuntuOSVersion": "18.04-LTS",
     "asetName": "dnsproxy-avail",
-    "nsgName": "dnsproxy-nsg",
-    "vnetName": "dnsproxy-vnet",
-    "vnetAddressPrefix": "10.0.0.0/8",
-    "subNet1Name": "subnet1",
-    "subNet1Prefix": "10.1.0.0/16",
+    "nsgName": "nsg-inf-prod-cin-001",
+    "vnetName": "vnet-inf-sbx-cin-001",
+    "vnetAddressPrefix": "10.100.0.0/16",
+    "subNet1Name": "ManagementSubnet",
+    "subNet1Prefix": "10.100.0.0/24",
     "storType": "Standard_LRS",
     "location": "[parameters('location')]",
     "nicName": "[concat(parameters('vmName'), '-', 'nic')]",
     "pipName": "[concat(parameters('vmName'), '-', 'pip')]",
     "scriptUrl": "[uri(parameters('_artifactsLocation'), concat('forwarderSetup.sh', parameters('_artifactsLocationSasToken')))]",
     "linuxConfiguration": {
-      "disablePasswordAuthentication": true,
+      "disablePasswordAuthentication": false,
       "ssh": {
         "publicKeys": [
           {
